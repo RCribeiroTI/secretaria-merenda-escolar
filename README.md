@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 🍎 Logística e Gestão da Merenda Escolar — Secretaria Municipal de Educação
 
 Este projeto faz parte de uma suíte de soluções Civic-Tech voltada para a modernização da gestão municipal, com foco no controle da alimentação escolar.
@@ -40,3 +41,7 @@ Defesa Cibernética: Autenticação por PIN de segurança em duas etapas para op
 
 Cloud Computing: Arquitetura conceitual orientada a nuvem para manter dados de inventário, mídias e histórico de movimentações sincronizados em tempo real com a Secretaria.
 
+=======
+# secretaria-merenda-escolar
+IDEIAS P/ PREFEITURAS (SECRETARIA DE EDUCAÇÃO: 1. Logística e Gestão da Merenda Escolar).
+>>>>>>> fc45528ce95a3bd226a2c01ab6889ea9089d1b25
