@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("SecretariaMerenda")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+0e1828b91f60b52dfbd178269db4733d3504d437")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+9e5871a3107b5f2d15e90c8c977c8d5db0be0018")]
 [assembly: System.Reflection.AssemblyProductAttribute("SecretariaMerenda")]
 [assembly: System.Reflection.AssemblyTitleAttribute("SecretariaMerenda")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
