@@ -1,3 +1,5 @@
+using System;
+
 namespace SecretariaMerenda.Models
 {
     public class Cardapio
@@ -8,6 +10,10 @@ namespace SecretariaMerenda.Models
         public string DescricaoPrato { get; set; } = string.Empty;
         public DateTime DataServico { get; set; }
 
+        // Construtor sem parâmetros (obrigatório para o Entity Framework Core)
+        public Cardapio() { }
+
+        // Construtor com parâmetros
         public Cardapio(int id, string diaDaSemana, string refeicao, string descricaoPrato, DateTime dataServico)
         {
             Id = id;
@@ -15,16 +21,6 @@ namespace SecretariaMerenda.Models
             Refeicao = refeicao;
             DescricaoPrato = descricaoPrato;
             DataServico = dataServico;
-        }
-
-        // Checa se o prato do cardápio oferece risco de alergia ao aluno
-        public bool PossuiRiscoParaAluno(Aluno aluno)
-        {
-            if (string.IsNullOrWhiteSpace(aluno.RestricaoAlimentar) || aluno.RestricaoAlimentar.Equals("Nenhuma", StringComparison.OrdinalIgnoreCase))
-                return false;
-
-            return DescricaoPrato.Contains(aluno.RestricaoAlimentar, StringComparison.OrdinalIgnoreCase) 
-                || (aluno.RestricaoAlimentar.Contains("Lactose", StringComparison.OrdinalIgnoreCase) && DescricaoPrato.Contains("Leite", StringComparison.OrdinalIgnoreCase));
         }
     }
 }

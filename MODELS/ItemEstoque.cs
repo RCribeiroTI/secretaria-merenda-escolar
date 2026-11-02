@@ -1,3 +1,5 @@
+using System;
+
 namespace SecretariaMerenda.Models
 {
     public class ItemEstoque
@@ -7,27 +9,24 @@ namespace SecretariaMerenda.Models
         public decimal Quantidade { get; set; }
         public string UnidadeMedida { get; set; } = string.Empty;
         public DateTime DataValidade { get; set; }
+        public string CodigoEscola { get; set; } = string.Empty;
 
-        public ItemEstoque(int id, string nomeAlimento, decimal quantidade, string unidadeMedida, DateTime dataValidade)
+        // Construtor sem parâmetros (obrigatório para o EF Core / SQLite)
+        public ItemEstoque() { }
+
+        // Construtor completo para cadastro manual (com Id = 0 para auto-incremento do banco)
+        public ItemEstoque(string nomeAlimento, decimal quantidade, string unidadeMedida, DateTime dataValidade, string codigoEscola)
         {
-            Id = id;
             NomeAlimento = nomeAlimento;
             Quantidade = quantidade;
             UnidadeMedida = unidadeMedida;
             DataValidade = dataValidade;
+            CodigoEscola = codigoEscola;
         }
 
-        // Alerta: Estoque igual ou abaixo do limite (padrão: 5 unidades/kg/litros)
-        public bool TemEstoqueCritico(decimal limiteMinimo = 5.0m)
+        public bool TemEstoqueCritico()
         {
-            return Quantidade <= limiteMinimo;
-        }
-
-        // Alerta: Vence nos próximos N dias (padrão: 7 dias)
-        public bool EstaProximoDaValidade(int diasMargem = 7)
-        {
-            TimeSpan diferenca = DataValidade.Date - DateTime.Now.Date;
-            return diferenca.TotalDays >= 0 && diferenca.TotalDays <= diasMargem;
+            return Quantidade <= 5;
         }
     }
 }

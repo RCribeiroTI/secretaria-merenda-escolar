@@ -1,3 +1,5 @@
+using System;
+
 namespace SecretariaMerenda.Models
 {
     public class Usuario
@@ -6,21 +8,23 @@ namespace SecretariaMerenda.Models
         public string Nome { get; set; } = string.Empty;
         public string Email { get; set; } = string.Empty;
         public string Senha { get; set; } = string.Empty;
-        public string Perfil { get; set; } = string.Empty; // GESTOR, PEDAGOGO ou SECRETARIO
+        public string Perfil { get; set; } = string.Empty; // GESTOR(A), PEDAGOGO(A), SECRETARIO(A), ADMINISTRADOR GERAL
+        public string NomeEscola { get; set; } = string.Empty;
+        public string CodigoEscola { get; set; } = string.Empty;
         public bool Ativo { get; set; } = true;
 
-        public Usuario(int id, string nome, string email, string senha, string perfil)
+        public Usuario() { }
+
+        public Usuario(int id, string nome, string email, string senha, string perfil, string nomeEscola = "", string codigoEscola = "")
         {
             Id = id;
             Nome = nome;
             Email = email;
             Senha = senha;
-            Perfil = perfil.ToUpper();
-        }
-
-        public bool Autenticar(string emailDigitado, string senhaDigitada)
-        {
-            return Email.Equals(emailDigitado, StringComparison.OrdinalIgnoreCase) && Senha == senhaDigitada && Ativo;
+            Perfil = perfil;
+            NomeEscola = nomeEscola;
+            CodigoEscola = codigoEscola;
+            Ativo = true;
         }
     }
 }

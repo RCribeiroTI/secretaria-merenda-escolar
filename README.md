@@ -1,47 +1,41 @@
-<<<<<<< HEAD
-🍎 Logística e Gestão da Merenda Escolar — Secretaria Municipal de Educação
+# 🏫 SecretariaMerenda - Sistema de Gestão de Merenda Escolar
 
-Este projeto faz parte de uma suíte de soluções Civic-Tech voltada para a modernização da gestão municipal, com foco no controle da alimentação escolar.
+Sistema desenvolvido em **C# (.NET 10)** com **Entity Framework Core** e **SQLite**, focado no controle logístico de merendas escolares utilizando o princípio **FEFO** (*First Expired, First Out* - Primeiro que Vence, Primeiro que Sai).
 
+---
 
+## 🚀 Funcionalidades Principais
 
-❌ O Problema
+* **Segurança e Autenticação:**
+  * Criptografia de senhas utilizando o padrão **BCrypt**.
+  * Validação de senhas fortes (mínimo de 8 caracteres, letras, números e símbolos).
+  * Proteção contra força bruta (bloqueio temporário após 3 tentativas incorretas).
+  * Controles de acesso por perfis (`Administrador Geral`, `Gestor(a)`, `Secretário(a)`, `Pedagogo(a)`).
+  * Cadastro público com aprovação pendente pelo Administrador.
 
-O controle do estoque de merenda feito por formulários em papel ou planilhas locais gera dois grandes gargalos:
+* **Gestão de Estoque (FEFO):**
+  * Cadastro de gêneros alimentícios com quantidade e unidade de medida.
+  * Ordenação automática por **data de validade (FEFO)**.
+  * Alertas visuais automáticos: `⚠️ VENCIMENTO PRÓXIMO` (≤ 7 dias) e `🚨 QTD CRÍTICA` (≤ 5 unidades).
+  * Baixa controlada de itens no estoque com exclusão automática de saldo zerado.
 
+* **Auditoria e Transparência:**
+  * Registro detalhado de logs de todas as ações no banco SQLite (`HistoricoMovimentacoes`).
+  * Relatório geral de auditoria acessível ao Administrador Geral.
 
+---
 
-Desperdício de Alimentos: Produtos que vencem na prateleira por falta de controle de prioridade e histórico de movimentações.
+## 🛠️ Tecnologias Utilizadas
 
+* **Linguagem:** C# (.NET 10 SDK)
+* **Banco de Dados:** SQLite (`secretaria_merenda.db`)
+* **ORM:** Entity Framework Core (`Microsoft.EntityFrameworkCore.Sqlite`)
+* **Segurança:** BCrypt.Net-Next
 
+---
 
-Desabastecimento: Escolas que ficam sem itens essenciais devido à demora na comunicação manual com a Secretaria.
+## 📦 Como Executar o Projeto Localmente
 
-
-
-💡 A Solução Digital
-
-Uma aplicação avançada em C# onde servidores realizam o gerenciamento completo do estoque em poucos cliques. O sistema conta com coleções dinâmicas de múltiplos itens, registro de histórico por transação, anexos de mídia digital (fotos de notas fiscais, áudios e vídeos de auditoria), validação de segurança em 2 etapas (PIN da secretaria), método de reposição auditável, e alertas automáticos para níveis críticos de estoque.
-
-
-
-🛠️ Pilares de T.I. Aplicados
-
-UX/UI Design: Foco em menus interativos no console de fácil navegação e uso ágil por servidores.
-
-
-
-.NET / C#: Programação Orientada a Objetos com encapsulamento rigoroso, propriedades privadas protegidas e gerenciamento de coleções (List<T>).
-
-
-
-Defesa Cibernética: Autenticação por PIN de segurança em duas etapas para operações sensíveis de baixa no estoque e arquitetura preparada para criptografia e servidores em nuvem.
-
-
-
-Cloud Computing: Arquitetura conceitual orientada a nuvem para manter dados de inventário, mídias e histórico de movimentações sincronizados em tempo real com a Secretaria.
-
-=======
-# secretaria-merenda-escolar
-IDEIAS P/ PREFEITURAS (SECRETARIA DE EDUCAÇÃO: 1. Logística e Gestão da Merenda Escolar).
->>>>>>> fc45528ce95a3bd226a2c01ab6889ea9089d1b25
+1. **Abra o terminal na pasta do projeto:**
+   ```bash
+   cd SecretariaMerenda

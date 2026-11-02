@@ -1,0 +1,4 @@
+[01/11/2026 22:25:50] Erro Auditoria: An error occurred while saving the entity changes. See the inner exception for details.
+[01/11/2026 22:27:30] Erro Auditoria: An error occurred while saving the entity changes. See the inner exception for details.
+[01/11/2026 22:29:01] Erro Auditoria: An error occurred while saving the entity changes. See the inner exception for details.
+[01/11/2026 22:29:25] Erro Auditoria: An error occurred while saving the entity changes. See the inner exception for details.
